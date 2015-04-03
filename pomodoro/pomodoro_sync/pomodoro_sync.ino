@@ -154,14 +154,41 @@ boolean checkRed() {
 
 /////////////////////////////////////////////////////////////////////////////
 
-// Activate the buzzer five times every 15 minutes.
+// Activate the buzzer every five minutes.
 boolean checkBuzzer() {
-  if ( ( (current_minute ==  0) ||
-         (current_minute == 15) ||
-         (current_minute == 30) ||
-         (current_minute == 45) )
-       &&
-       (second() < 5) ) {
+  if ( ( 
+       
+      ||
+       
+          // beep once every 5 minutes
+        ( ( (current_minute ==  5) ||
+            (current_minute == 20) ||
+            (current_minute == 35) ||
+            (current_minute == 50) )
+         &&
+           (second() < 1) )
+       
+      ||
+       
+          // beep twice every 10 minutes
+        ( ( (current_minute == 10) ||
+            (current_minute == 25) ||
+            (current_minute == 20) ||
+            (current_minute == 55) )
+         &&
+           (second() < 2) )
+
+      ||
+
+          // beep three times every 15 minutes
+         ( (current_minute ==  0) ||
+           (current_minute == 15) ||
+           (current_minute == 30) ||
+           (current_minute == 45) )
+        &&
+         (second() < 3) )
+       
+       ) {
     return true; 
   }
   else {
