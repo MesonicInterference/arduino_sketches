@@ -156,10 +156,7 @@ boolean checkRed() {
 
 // Activate the buzzer every five minutes.
 boolean checkBuzzer() {
-  if ( ( 
-       
-      ||
-       
+  if ( (        
           // beep once every 5 minutes
         ( ( (current_minute ==  5) ||
             (current_minute == 20) ||
